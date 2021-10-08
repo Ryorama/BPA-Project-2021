@@ -1,0 +1,184 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02c05ee384f57d543b3303e17088dfeb, type: 3}
+  m_Name: TopDownWorldData
+  m_EditorClassIdentifier: 
+  GUID: df9d09011e925244d9791dfee426db32
+  SavePlayModeChanges: 0
+  ToggleOSD: 1
+  OSDUpdateRate: 0.05
+  OSDUIScale: 1
+  ToggleCursor: 1
+  SaveWorld: 0
+  LoadWorld: 0
+  Name: World1
+  WorldWidth: 512
+  WorldHeight: 512
+  Seed: -20499562
+  WorldDirectory: C:/Users/sk8te/Documents/Unity/SVN/TerrainEngine2D/trunk/TerrainEngine2D/Assets/StreamingAssets/Worlds/Bug
+    Test/
+  ChunkSize: 16
+  ChunkLoadRate: 0.1
+  ChunkLoadDistance: 48
+  EnableInputHandler: 1
+  MaxModifyRadius: 3
+  FluidDisabled: 0
+  FluidLayer: 1
+  RenderFluidAsTexture: 1
+  BasicFluid: 0
+  TopDown: 1
+  RunFluidSimulation: 1
+  FluidUpdateRate: 0
+  MaxFluidWeight: 1
+  MinFluidWeight: 0.005
+  StableFluidAmount: 0.0001
+  FluidPressureWeight: 0.2
+  FluidDropAmount: 0.2
+  MainFluidColor:
+    serializedVersion: 2
+    rgba: 3431886124
+  SecondaryFluidColor:
+    serializedVersion: 2
+    rgba: 3437473350
+  FluidTypes:
+  - {fileID: 11400000, guid: e424ab02549d5ed44a31320da2c129da, type: 2}
+  AllowSurfaceFilling: 1
+  FluidMixingFactor: 0.1
+  LightingDisabled: 0
+  BasicLighting: 0
+  LightBleedAmount: 2
+  LightLayer: 3
+  IntensityFactor: 18
+  TransmissionFactor: 5
+  AmbientLightDisabled: 0
+  AmbientLightLayer: 3
+  AmbientIntensityFactor: 18
+  AmbientTransmissionFactor: 5
+  UseHeightMap: 0
+  PauseTime: 1
+  TimeFactor: 100
+  DaylightColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  NightColor:
+    serializedVersion: 2
+    rgba: 872415232
+  SunriseTime: 7
+  SunsetTime: 19
+  DownScale: 2
+  NumberBlurPasses: 3
+  FallingBlocksDisabled: 1
+  FallingBlockLayer: 1
+  FallingBlocksUpdateRate: 0.05
+  OverlapBlendSquares: 0
+  CullHiddenBlocks: 1
+  PixelsPerBlock: 8
+  ZBlockDistance: 1
+  ZLayerFactor: 1
+  BlockLayers:
+  - colliderLayer: 0
+    name: Background
+    material: {fileID: 2100000, guid: e362a9db437d53546b9aab97a9edf8d0, type: 2}
+    blockInfo:
+    - name: Sand
+      texturePositionX: 0
+      texturePositionY: 0
+      textureWidth: 2
+      textureHeight: 3
+      overlapBlock: 1
+      numVariations: 4
+      transparent: 0
+      fallingBlock: 0
+    - name: Dirt
+      texturePositionX: 0
+      texturePositionY: 3
+      textureWidth: 2
+      textureHeight: 3
+      overlapBlock: 1
+      numVariations: 4
+      transparent: 0
+      fallingBlock: 0
+  - colliderLayer: 0
+    name: Main
+    material: {fileID: 2100000, guid: 33862f13fe2c05d41815f7d03aca1a4a, type: 2}
+    blockInfo:
+    - name: Sand
+      texturePositionX: 0
+      texturePositionY: 0
+      textureWidth: 2
+      textureHeight: 3
+      overlapBlock: 1
+      numVariations: 4
+      transparent: 0
+      fallingBlock: 0
+    - name: Grass
+      texturePositionX: 0
+      texturePositionY: 3
+      textureWidth: 2
+      textureHeight: 3
+      overlapBlock: 1
+      numVariations: 4
+      transparent: 0
+      fallingBlock: 0
+    - name: Dirt
+      texturePositionX: 0
+      texturePositionY: 6
+      textureWidth: 2
+      textureHeight: 3
+      overlapBlock: 1
+      numVariations: 4
+      transparent: 0
+      fallingBlock: 0
+  - colliderLayer: 0
+    name: Nature
+    material: {fileID: 2100000, guid: 9b0444f46f7d36d4493fb9a9cc5a7805, type: 2}
+    blockInfo:
+    - name: Flower
+      texturePositionX: 0
+      texturePositionY: 0
+      textureWidth: 1
+      textureHeight: 1
+      overlapBlock: 0
+      numVariations: 4
+      transparent: 1
+      fallingBlock: 0
+    - name: Rock
+      texturePositionX: 0
+      texturePositionY: 1
+      textureWidth: 1
+      textureHeight: 1
+      overlapBlock: 0
+      numVariations: 4
+      transparent: 1
+      fallingBlock: 0
+  - colliderLayer: 1
+    name: Mountain
+    material: {fileID: 2100000, guid: c03e3ea42cfac7b4c9a1b416ecbf0a25, type: 2}
+    blockInfo:
+    - name: DarkRock
+      texturePositionX: 0
+      texturePositionY: 0
+      textureWidth: 2
+      textureHeight: 3
+      overlapBlock: 1
+      numVariations: 4
+      transparent: 0
+      fallingBlock: 0
+    - name: Rock
+      texturePositionX: 0
+      texturePositionY: 3
+      textureWidth: 2
+      textureHeight: 3
+      overlapBlock: 1
+      numVariations: 4
+      transparent: 0
+      fallingBlock: 0

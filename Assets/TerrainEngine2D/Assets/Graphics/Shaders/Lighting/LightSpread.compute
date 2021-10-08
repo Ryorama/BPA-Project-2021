@@ -1,0 +1,42 @@
+﻿// Copyright (C) 2020 Matthew Wilson
+#pragma kernel SpreadLight
+
+RWTexture2D<float4> Output;
+Texture2D<float4> Input;
+Texture2D<float4> TerrainMask;
+float3 IntensityDrop;
+float3 TransmissionDrop;
+
+// Spreads the light one block at a time by setting the pixels colour channel based on
+//  the adjacent pixels
+[numthreads(8,8,1)]
+void SpreadLight (uint3 id : SV_DispatchThreadID)
+{
+    float4 pixel = Input[id.xy];
+    // adjacent pixels
+    float4 left = Input[id.xy + float2(-1, 0)];
+    float4 right = Input[id.xy + float2(1, 0)];
+    float4 up = Input[id.xy + float2(0, 1)];
+    float4 down = Input[id.xy + float2(0, -1)];
+    // set the colour channel of this pixel to the maximum value of the adjacent pixels
+    //  while taking into account the intensity drop
+    float r = max(pixel.x, max(left.x, max(right.x, max(up.x, down.x))) - IntensityDrop);
+    float g = max(pixel.y, max(left.y, max(right.y, max(up.y, down.y))) - IntensityDrop);
+    float b = max(pixel.z, max(left.z, max(right.z, max(up.z, down.z))) - IntensityDrop);
+    // is terrain block; drop the intensity
+    float4 terrainPixel = TerrainMask[id.xy];
+    if (terrainPixel.x == 0 && terrainPixel.y == 0 && terrainPixel.z == 0 && terrainPixel.w == 1)
+    {
+        r -= TransmissionDrop;
+        g -= TransmissionDrop;
+        b -= TransmissionDrop;
+    }
+
+    float a = pixel.w;
+    // ensure alpha is not zero if the pixel has color
+    if (a == 0 && (r != 0 || g != 0 || b != 0))
+        a = 1;
+    
+    Output[id.xy] = float4(r,g,b,a);
+    
+}
