@@ -8,9 +8,9 @@ public class MusicTicker : MonoBehaviour
     public static AudioClip currentTrack;
     public static AudioSource musicTicker;
 
-    void Awake()
+    void Start()
     {
-        musicTicker = GameObject.Find("WorldMusic").GetComponent<AudioSource>();
+        musicTicker = this.gameObject.GetComponent<AudioSource>();
     }
 
     public static void ChangeTrack(AudioClip clip)

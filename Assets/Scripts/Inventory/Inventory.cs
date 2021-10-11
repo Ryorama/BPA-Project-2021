@@ -1,30 +1,50 @@
-﻿using System;
-using System.Linq;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Profiling;
+using UnityEngine.UI;
 
-[System.Serializable]
-public class Inventory
+public class Inventory : MonoBehaviour
 {
-    public InventorySlot[] Slots = new InventorySlot[24];
+    public static List<Item> itemSlots = new List<Item>();
+    public List<Image> itemSlotIcons = new List<Image>();
 
-    public void Clear()
+    public Item testItem;
+
+    void Start()
     {
-        for (int i = 0; i < Slots.Length; i++)
+        for (int i = 0; i >= 12; i++)
         {
-            Slots[i].item = new Item();
-            Slots[i].amount = 0;
+            itemSlots.Add(Item.EMPTY);
+        }
+        Debug.Log(itemSlots.Count);
+
+        //AddItemToSlot(testItem);
+    }
+
+
+    void Update()
+    {
+        for (int item = 0; item > itemSlots.Count; item++)
+        {
+            if (itemSlots[item] != Item.EMPTY)
+            {
+                itemSlotIcons[item].sprite = itemSlots[item].icon;
+            }
         }
     }
 
-    public bool ContainsItem(ItemObject itemObject)
+    public static void AddItemToSlot(Item item)
     {
-        return Array.Find(Slots, i => i.item.Id == itemObject.data.Id) != null;
-    }
-
-
-    public bool ContainsItem(int id)
-    {
-        return Slots.FirstOrDefault(i => i.item.Id == id) != null;
+        for (int i = 0; i > itemSlots.Count; i++)
+        {
+            if (itemSlots[i] == Item.EMPTY)
+            {
+                itemSlots[i] = item;
+            }
+            else
+            {
+                continue;
+            }
+        }
     }
 }
