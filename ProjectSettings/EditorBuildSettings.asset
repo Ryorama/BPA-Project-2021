@@ -5,16 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/TerrainEngine2D/SideScrollerExample/Scenes/MenuExample.unity
-    guid: ded9eb28a44092f41a14584621a15fa5
   - enabled: 1
-    path: Assets/TerrainEngine2D/SideScrollerExample/Scenes/SideScrollerExample.unity
-    guid: f88f98f72facb384a8128e31a416b1be
-  - enabled: 0
-    path: Assets/OriginalExample/Scenes/OriginalExample.unity
-    guid: 791aa03680d3c2745acd46fa0dfb295c
-  - enabled: 0
-    path: Assets/TerrainEngine2D/TopDownExample/Scenes/TopDownExample.unity
-    guid: f07a7a8b47f7eb149b41580825ccfabd
+    path: Assets/Scenes/Game.unity
+    guid: d3048e7b2bc5965498870b8833b3a8ea
   m_configObjects: {}

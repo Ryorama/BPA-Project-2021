@@ -54,7 +54,7 @@ MonoBehaviour:
   AllowSurfaceFilling: 1
   FluidMixingFactor: 0.2
   LightingDisabled: 0
-  BasicLighting: 1
+  BasicLighting: 0
   LightBleedAmount: 2
   LightLayer: 0
   IntensityFactor: 8
@@ -64,14 +64,14 @@ MonoBehaviour:
   AmbientIntensityFactor: 8
   AmbientTransmissionFactor: 30
   UseHeightMap: 1
-  PauseTime: 1
+  PauseTime: 0
   TimeFactor: 100
   DaylightColor:
     serializedVersion: 2
-    rgba: 4294967219
+    rgba: 4294173025
   NightColor:
     serializedVersion: 2
-    rgba: 908661760
+    rgba: 707335168
   SunriseTime: 7
   SunsetTime: 19
   DownScale: 2
@@ -115,4 +115,35 @@ MonoBehaviour:
       overlapBlock: 1
       numVariations: 1
       transparent: 0
+      fallingBlock: 0
+  - colliderLayer: 0
+    name: Background
+    material: {fileID: 2100000, guid: 614814bfcd53e4440ab6314362ed3a99, type: 2}
+    blockInfo:
+    - name: Stump
+      texturePositionX: 0
+      texturePositionY: 0
+      textureWidth: 3
+      textureHeight: 1
+      overlapBlock: 0
+      numVariations: 3
+      transparent: 1
+      fallingBlock: 0
+    - name: Trunk
+      texturePositionX: 0
+      texturePositionY: 1
+      textureWidth: 1
+      textureHeight: 1
+      overlapBlock: 0
+      numVariations: 6
+      transparent: 1
+      fallingBlock: 0
+    - name: Top
+      texturePositionX: 0
+      texturePositionY: 3
+      textureWidth: 7
+      textureHeight: 8
+      overlapBlock: 0
+      numVariations: 3
+      transparent: 1
       fallingBlock: 0
