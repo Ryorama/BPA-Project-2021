@@ -2,35 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicTicker : MonoBehaviour
+namespace Game
 {
-
-    public static AudioClip currentTrack;
-    public static AudioSource musicTicker;
-
-    void Start()
+    public class MusicTicker : MonoBehaviour
     {
-        musicTicker = this.gameObject.GetComponent<AudioSource>();
-    }
 
-    public static void ChangeTrack(AudioClip clip)
-    {
-        if (currentTrack != clip)
+        public static AudioClip currentTrack;
+        public static AudioSource musicTicker;
+
+        void Start()
+        {
+            musicTicker = this.gameObject.GetComponent<AudioSource>();
+        }
+
+        public static void ChangeTrack(AudioClip clip)
+        {
+            if (currentTrack != clip)
+            {
+                musicTicker.Stop();
+                currentTrack = clip;
+                musicTicker.clip = currentTrack;
+                musicTicker.Play();
+            }
+        }
+
+        public static void StopMusic()
         {
             musicTicker.Stop();
-            currentTrack = clip;
-            musicTicker.clip = currentTrack;
+        }
+
+        public static void PlayMusic()
+        {
             musicTicker.Play();
         }
-    }
-
-    public static void StopMusic()
-    {
-        musicTicker.Stop();
-    }
-
-    public static void PlayMusic()
-    {
-        musicTicker.Play();
     }
 }

@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Item", menuName = "Game/Items/New Item", order = 1)]
-public class Item : ScriptableObject
+namespace Game
 {
-    public static Item EMPTY = null;
+    [CreateAssetMenu(fileName = "New Item", menuName = "Game/Items/New Item", order = 1)]
+    public class Item : ScriptableObject
+    {
+        public static Item EMPTY = null;
 
-    public Sprite icon;
-    public int stack;
-    public string itemName;
-    public string tooltip;
+        public Sprite icon;
+        public ItemType itemType;
+        public int stack;
+        public string itemName;
+        public string tooltip;
+    }
 }

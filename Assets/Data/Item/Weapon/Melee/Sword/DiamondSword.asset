@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: DiamondSword
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 4ecb271375e2921438cbf194b9ad51ce, type: 3}
-  stack: 0
+  itemType: 1
+  stack: 1
   itemName: 
   tooltip: 
