@@ -8,7 +8,7 @@ public class Item : ScriptableObject
     public static Item EMPTY = null;
 
     public Sprite icon;
-    public int stackSize;
+    public int stack;
     public string itemName;
     public string tooltip;
 }

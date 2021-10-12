@@ -11,7 +11,7 @@ namespace Game
 
 		public static bool lockMovement = false;
 
-		public static float runSpeed = 30f;
+		public static float runSpeed = 15f;
 
 		float horizontalMove = 0f;
 		bool jump = false;
