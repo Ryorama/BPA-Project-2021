@@ -44,8 +44,6 @@ namespace Game
                 {
                     itemSlotIcons[item].gameObject.SetActive(false);
                 }
-
-                itemSlotIcons[item].GetComponent<Button>();
             }
         }
 
@@ -91,39 +89,41 @@ namespace Game
 
         public void ClickInvSlot(int slotID)
         {
-            Debug.Log(slotID);
-            Debug.Log(oldClickedSlot);
+			if (itemSlots[slotID] != Item.EMPTY) {
+				Debug.Log(slotID);
+				Debug.Log(oldClickedSlot);
 
-            if (selectedSlotId != slotID)
-            {
-                selectedSlotId = slotID;
-                slotClickIndex += 1;
-                holdingItem = true;
-                
-                if (slotClickIndex == 0)
-                {
-                    oldClickedSlot = slotID;
-                }
-            } else
-            {
-                holdingItem = false;
-                slotClickIndex = 0;
-                selectedSlotId = -1;
-            }
+				if (selectedSlotId != slotID)
+				{
+					selectedSlotId = slotID;
+					slotClickIndex += 1;
+					holdingItem = true;
+					
+					if (slotClickIndex <= 1)
+					{
+						oldClickedSlot = slotID;
+					}
+				} else
+				{
+					holdingItem = false;
+					slotClickIndex = 0;
+					selectedSlotId = -1;
+				}
 
-            if (holdingItem == true && slotClickIndex >= 2)
-            {
-                itemSlots[slotID].icon = null;
-                itemSlots[slotID].stack = 0;
+				if (holdingItem == true && slotClickIndex >= 2)
+				{
+					itemSlots[slotID].icon = itemSlots[oldClickedSlot].icon;
+					itemSlots[slotID].stack = itemSlots[oldClickedSlot].stack;
 
-                itemSlots[oldClickedSlot].icon = null;
-                itemSlots[oldClickedSlot].stack = 0;
+					itemSlots[oldClickedSlot].icon = itemSlots[slotID].icon;
+					itemSlots[oldClickedSlot].stack = itemSlots[slotID].stack;
 
-                holdingItem = false;
-                slotClickIndex = 0;
-                selectedSlotId = -1;
-                oldClickedSlot = -1;
-            }
+					holdingItem = false;
+					slotClickIndex = 0;
+					selectedSlotId = -1;
+					oldClickedSlot = -1;
+				}
+			}
         }
     }
 }

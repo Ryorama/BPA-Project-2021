@@ -995,7 +995,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 445409976}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1220176842}
+        m_MethodName: ClickInvSlot
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &478235839
 GameObject:
   m_ObjectHideFlags: 0
@@ -1237,7 +1248,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 492369199}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1220176842}
+        m_MethodName: ClickInvSlot
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &579570517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1355,7 +1377,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 579570520}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1220176842}
+        m_MethodName: ClickInvSlot
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 9
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &688063716
 GameObject:
   m_ObjectHideFlags: 0
@@ -2433,7 +2466,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1101981588}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1220176842}
+        m_MethodName: ClickInvSlot
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1182705667
 GameObject:
   m_ObjectHideFlags: 0
@@ -2551,7 +2595,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1182705670}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1220176842}
+        m_MethodName: ClickInvSlot
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1218157214
 GameObject:
   m_ObjectHideFlags: 0
@@ -2820,6 +2875,10 @@ MonoBehaviour:
   - {fileID: 1238358372}
   testItem: {fileID: 11400000, guid: fa101a903ec0f184585d3a814b74686c, type: 2}
   diamondSword: {fileID: 11400000, guid: 2b1ee21f42f67c140af18ea713424add, type: 2}
+  selectedSlotId: -1
+  oldClickedSlot: -1
+  slotClickIndex: 0
+  holdingItem: 0
 --- !u!1 &1233275970
 GameObject:
   m_ObjectHideFlags: 0
@@ -3012,7 +3071,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1238358372}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1220176842}
+        m_MethodName: ClickInvSlot
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 11
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1262997590
 GameObject:
   m_ObjectHideFlags: 0
@@ -3130,7 +3200,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1262997593}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1220176842}
+        m_MethodName: ClickInvSlot
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1330584485
 GameObject:
   m_ObjectHideFlags: 0
@@ -3536,7 +3617,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1354390510}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1220176842}
+        m_MethodName: ClickInvSlot
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1380832129
 GameObject:
   m_ObjectHideFlags: 0
@@ -3846,7 +3938,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1454065560}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1220176842}
+        m_MethodName: ClickInvSlot
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1479457750
 GameObject:
   m_ObjectHideFlags: 0
@@ -4494,7 +4597,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1933736871}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1220176842}
+        m_MethodName: ClickInvSlot
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1980641659
 GameObject:
   m_ObjectHideFlags: 0
@@ -4612,7 +4726,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1980641662}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1220176842}
+        m_MethodName: ClickInvSlot
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2007554965
 GameObject:
   m_ObjectHideFlags: 0
@@ -4805,7 +4930,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2040851148}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1220176842}
+        m_MethodName: ClickInvSlot
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2098933833
 GameObject:
   m_ObjectHideFlags: 0
