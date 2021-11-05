@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Game;
 using UnityEngine;
 
 // Copyright (C) 2020 Matthew Wilson
@@ -116,10 +117,17 @@ namespace TerrainEngine2D
                     //Loops through all the layers
                     foreach (byte layer in layers)
                     {
-                        //Removes block from layer if there is one
-                        if (World.Instance.GetBlockLayer(layer).IsBlockAt(posX, posY))
-                            World.Instance.RemoveBlock(posX, posY, layer);
-                    }
+                        if (World.Instance.GetBlockLayer((byte)OverwoldTerrainGenerator.WorldLayers.Background).IsBlockAt(posX, posY + 1) || World.Instance.GetBlockLayer((byte)OverwoldTerrainGenerator.WorldLayers.Background).GetBlockType(posX, posY) == (byte)OverwoldTerrainGenerator.BackgroundLayer.Stump)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            //Removes block from layer if there is one
+                            if (World.Instance.GetBlockLayer(layer).IsBlockAt(posX, posY))
+                                World.Instance.RemoveBlock(posX, posY, layer);
+                        }
+                    }     
                 }
             }
         }

@@ -112,10 +112,10 @@ namespace Game
 
 				if (holdingItem == true && slotClickIndex >= 2)
 				{
-					itemSlots[slotID].icon = itemSlots[oldClickedSlot].icon;
+                    itemSlotIcons[slotID].sprite = itemSlotIcons[oldClickedSlot].sprite;
 					itemSlots[slotID].stack = itemSlots[oldClickedSlot].stack;
 
-					itemSlots[oldClickedSlot].icon = itemSlots[slotID].icon;
+                    itemSlotIcons[oldClickedSlot].sprite = itemSlotIcons[slotID].sprite;
 					itemSlots[oldClickedSlot].stack = itemSlots[slotID].stack;
 
 					holdingItem = false;
