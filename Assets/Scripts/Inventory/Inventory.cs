@@ -18,6 +18,7 @@ namespace Game
         public int slotClickIndex = 0;
         public bool holdingItem = false;
 
+
         void Start()
         {
             for (int i = 0; i < 12; i++)
@@ -112,11 +113,16 @@ namespace Game
 
 				if (holdingItem == true && slotClickIndex >= 2)
 				{
-                    itemSlotIcons[slotID].sprite = itemSlotIcons[oldClickedSlot].sprite;
-					itemSlots[slotID].stack = itemSlots[oldClickedSlot].stack;
+                    Sprite oldSlotSprite = itemSlotIcons[oldClickedSlot].sprite;
+                    Sprite curSlotSprite = itemSlotIcons[slotID].sprite;
+                    int oldSlotStack = itemSlots[oldClickedSlot].stack;
+                    int curSlotStack = itemSlots[slotID].stack;
 
-                    itemSlotIcons[oldClickedSlot].sprite = itemSlotIcons[slotID].sprite;
-					itemSlots[oldClickedSlot].stack = itemSlots[slotID].stack;
+                    itemSlotIcons[slotID].sprite = oldSlotSprite;
+                    itemSlots[slotID].stack = oldSlotStack;
+
+                    itemSlotIcons[oldClickedSlot].sprite = curSlotSprite;
+                    itemSlots[oldClickedSlot].stack = curSlotStack;
 
 					holdingItem = false;
 					slotClickIndex = 0;

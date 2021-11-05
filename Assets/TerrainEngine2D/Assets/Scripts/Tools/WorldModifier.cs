@@ -117,9 +117,12 @@ namespace TerrainEngine2D
                     //Loops through all the layers
                     foreach (byte layer in layers)
                     {
-                        if (World.Instance.GetBlockLayer((byte)OverwoldTerrainGenerator.WorldLayers.Background).IsBlockAt(posX, posY + 1) || World.Instance.GetBlockLayer((byte)OverwoldTerrainGenerator.WorldLayers.Background).GetBlockType(posX, posY) == (byte)OverwoldTerrainGenerator.BackgroundLayer.Stump)
+                        if (World.Instance.GetBlockLayer((byte)OverwoldTerrainGenerator.WorldLayers.Background).IsBlockAt(posX, posY + 1))
                         {
-                            break;
+                            if (World.Instance.GetBlockLayer((byte)OverwoldTerrainGenerator.WorldLayers.Background).GetBlockType(posX, posY + 1) == (byte)OverwoldTerrainGenerator.BackgroundLayer.Stump)
+                            {
+                                break;
+                            }
                         }
                         else
                         {
