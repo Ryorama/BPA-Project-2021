@@ -117,19 +117,21 @@ namespace TerrainEngine2D
                     //Loops through all the layers
                     foreach (byte layer in layers)
                     {
-                        if (World.Instance.GetBlockLayer((byte)OverwoldTerrainGenerator.WorldLayers.Background).IsBlockAt(posX, posY + 1))
-                        {
-                            if (World.Instance.GetBlockLayer((byte)OverwoldTerrainGenerator.WorldLayers.Background).GetBlockType(posX, posY + 1) == (byte)OverwoldTerrainGenerator.BackgroundLayer.Stump)
+                        if (ItemWheel.itemSlots[ItemWheel.selectedSlot].itemType == ItemType.Pickaxe && (World.Instance.GetBlockLayer(layer).GetBlockType(posX, posY) == (byte)OverwoldTerrainGenerator.MainLayer.Stone)) {
+                            if (World.Instance.GetBlockLayer((byte)OverwoldTerrainGenerator.WorldLayers.Background).IsBlockAt(posX, posY + 1))
                             {
-                                break;
+                                if (World.Instance.GetBlockLayer((byte)OverwoldTerrainGenerator.WorldLayers.Background).GetBlockType(posX, posY + 1) == (byte)OverwoldTerrainGenerator.BackgroundLayer.Stump)
+                                {
+                                    break;
+                                }
                             }
-                        }
-                        else
-                        {
-                            //Removes block from layer if there is one
-                            if (World.Instance.GetBlockLayer(layer).IsBlockAt(posX, posY))
-                                World.Instance.RemoveBlock(posX, posY, layer);
-                        }
+                            else
+                            {
+                                //Removes block from layer if there is one
+                                if (World.Instance.GetBlockLayer(layer).IsBlockAt(posX, posY))
+                                    World.Instance.RemoveBlock(posX, posY, layer);
+                            }
+                        } 
                     }     
                 }
             }

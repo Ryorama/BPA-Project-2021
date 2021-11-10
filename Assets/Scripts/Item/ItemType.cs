@@ -10,6 +10,8 @@ namespace Game
        MeleeWeapon,
        Bow,
        Consumeable,
-       Tile
+       Tile,
+       Pickaxe,
+       Shovel
     }
 }

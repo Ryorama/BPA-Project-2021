@@ -14,6 +14,8 @@ namespace Game
 
         public static bool isDaytime;
 
+        public SpriteRenderer heldItemPlayer;
+
         public Text fps;
 
         public GameObject invObject;
@@ -29,6 +31,14 @@ namespace Game
 
         void Update()
         {
+            if (ItemWheel.itemSlots[ItemWheel.selectedSlot] != Item.EMPTY)
+            {
+                heldItemPlayer.sprite = ItemWheel.itemSlots[ItemWheel.selectedSlot].icon;
+            } else
+            {
+                heldItemPlayer.sprite = null;
+            }
+            
             if (Input.GetKeyUp(KeyCode.Escape))
             {
                 if (!isInventoryOpen)
