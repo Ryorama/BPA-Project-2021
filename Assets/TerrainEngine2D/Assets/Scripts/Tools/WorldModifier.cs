@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text;
 using Game;
 using UnityEngine;
 
@@ -9,8 +10,13 @@ namespace TerrainEngine2D
     /// <summary>
     /// Controls modification of the World.Instance
     /// </summary>
+    /// 
     public static class WorldModifier
     {
+
+        public static List<OverwoldTerrainGenerator.MainLayer> stoneMaterials = new List<OverwoldTerrainGenerator.MainLayer>();
+        public static List<OverwoldTerrainGenerator.MainLayer> groundMaterials = new List<OverwoldTerrainGenerator.MainLayer>();
+
         /// <summary>
         /// Places fluid at a specific location in the world
         /// </summary>
@@ -117,22 +123,49 @@ namespace TerrainEngine2D
                     //Loops through all the layers
                     foreach (byte layer in layers)
                     {
-                        if (ItemWheel.itemSlots[ItemWheel.selectedSlot].itemType == ItemType.Pickaxe && (World.Instance.GetBlockLayer(layer).GetBlockType(posX, posY) == (byte)OverwoldTerrainGenerator.MainLayer.Stone)) {
-                            if (World.Instance.GetBlockLayer((byte)OverwoldTerrainGenerator.WorldLayers.Background).IsBlockAt(posX, posY + 1))
+                        for (int gm = 0; gm < groundMaterials.Count; gm++) {
+                            if (ItemWheel.itemSlots[ItemWheel.selectedSlot].itemType == ItemType.Shovel && World.Instance.GetBlockLayer((byte)OverwoldTerrainGenerator.WorldLayers.Main).GetBlockType(posX, posX) == (byte)groundMaterials[gm])
                             {
-                                if (World.Instance.GetBlockLayer((byte)OverwoldTerrainGenerator.WorldLayers.Background).GetBlockType(posX, posY + 1) == (byte)OverwoldTerrainGenerator.BackgroundLayer.Stump)
+                                if (World.Instance.GetBlockLayer((byte)OverwoldTerrainGenerator.WorldLayers.Background).IsBlockAt(posX, posY + 1))
                                 {
-                                    break;
+                                    if (World.Instance.GetBlockLayer((byte)OverwoldTerrainGenerator.WorldLayers.Background).GetBlockType(posX, posY + 1) == (byte)OverwoldTerrainGenerator.BackgroundLayer.Stump)
+                                    {
+                                        break;
+                                    }
+                                }
+                                else
+                                {
+                                    //Removes block from layer if there is one
+                                    if (World.Instance.GetBlockLayer(layer).IsBlockAt(posX, posY))
+                                    {
+                                        World.Instance.RemoveBlock(posX, posY, layer);
+                                    }
                                 }
                             }
-                            else
+                        }
+
+                        for (int sm = 0; sm < stoneMaterials.Count; sm++)
+                        {
+                            if (ItemWheel.itemSlots[ItemWheel.selectedSlot].itemType == ItemType.Pickaxe && World.Instance.GetBlockLayer((byte)OverwoldTerrainGenerator.WorldLayers.Main).GetBlockType(posX, posX) == (byte)stoneMaterials[sm])
                             {
-                                //Removes block from layer if there is one
-                                if (World.Instance.GetBlockLayer(layer).IsBlockAt(posX, posY))
-                                    World.Instance.RemoveBlock(posX, posY, layer);
+                                if (World.Instance.GetBlockLayer((byte)OverwoldTerrainGenerator.WorldLayers.Background).IsBlockAt(posX, posY + 1))
+                                {
+                                    if (World.Instance.GetBlockLayer((byte)OverwoldTerrainGenerator.WorldLayers.Background).GetBlockType(posX, posY + 1) == (byte)OverwoldTerrainGenerator.BackgroundLayer.Stump)
+                                    {
+                                        break;
+                                    }
+                                }
+                                else
+                                {
+                                    //Removes block from layer if there is one
+                                    if (World.Instance.GetBlockLayer(layer).IsBlockAt(posX, posY))
+                                    {
+                                        World.Instance.RemoveBlock(posX, posY, layer);
+                                    }
+                                }
                             }
-                        } 
-                    }     
+                        }
+                    }
                 }
             }
         }

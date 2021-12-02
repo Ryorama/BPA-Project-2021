@@ -20,8 +20,6 @@ namespace Game
         //Fluid types
         public enum FluidType { Water, Lava }
 
-
-
         public override void GenerateData()
         {
             base.GenerateData();

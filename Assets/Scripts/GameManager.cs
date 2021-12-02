@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TerrainEngine2D;
+using System.Text;
 
 namespace Game
 {
@@ -22,7 +23,13 @@ namespace Game
         public bool isInventoryOpen;
         public static World world;
 
+        void Start()
+        {
+            WorldModifier.groundMaterials.Add(OverwoldTerrainGenerator.MainLayer.Grass);
+            WorldModifier.groundMaterials.Add(OverwoldTerrainGenerator.MainLayer.Dirt);
 
+            WorldModifier.stoneMaterials.Add(OverwoldTerrainGenerator.MainLayer.Stone);
+        }
 
         void Awake()
         {
